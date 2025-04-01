@@ -1,0 +1,7 @@
+google-genai>=1.5.0
+openai>=1.66.3
+requests>=2.31.0
+flask
+flask_jwt_extended
+psycopg2
+flask_cors

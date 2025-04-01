@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Experiment 02
+## Large Language Models for Password Security Research
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+- [Need](#purpose)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Database Setup](#database)
+  - [Running the Project](#running-the-project)
+- [Model](#models)
+- [Results](#results)
 
-## Available Scripts
+## Purpose
 
-In the project directory, you can run:
+This experiment is to apply the results of experiment 01 which was figuring out the right open source model "Gemma3-12B" and to see the ways to counter attack the attacks on the passwords
 
-### `npm start`
+1. Generate realistic password variations based on existing password datasets using Gemma3 Model.
+2. Integrate with the existing system augmented as JWT based authentication system.
+3. Decide a way to protect the password
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The insights gained from this experiment can help:
+- Improve password security policies
+- Develop better password strength metrics
+- Understand how attackers might exploit password patterns
+- Create more effective password generation guidelines
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **LM Studio Setup**
+   - Download and install LM Studio from [https://lmstudio.ai/](https://lmstudio.ai/)
+   - Download the Gemma-3b-12b-it model (approximately 7.33GB)
+   - Launch LM Studio and load the Gemma model
+   - Start the local server in LM Studio (should run on `localhost:1234`)
+2. **Database Setup**
+    - Create a Database named: ```nds```
+    - Run the ```db/db.py``` to create necessary tables for the experiment.
 
-### `npm run build`
+### Running the Project
+1. Clone this repository
+2. For Client Interface:
+    - Install dependencies: ```npm install```
+3. For Server:
+    - Navigate into the folder: ```cd server```
+    - Install dependencies: ```pip install -r requirements.txt```
+3. Run the main script:
+   ```bash
+    python3 main.py
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Datasets
+- https://www.skullsecurity.org/wiki/Passwords
+- https://github.com/yuqian5/PasswordCollection
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Models
+- Gemma-3-12b-it ~ 7.33GB
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Results
+<div style="background-color:white;">
+<img src="./ndsexp2.png" />
+</div>
